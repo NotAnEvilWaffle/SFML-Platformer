@@ -6,33 +6,27 @@
 #include <iostream>
 
 
+namespace Zero {
 
+	struct Transform {
+		sf::Vector2i position;
 
-struct Component {
+		Transform() : position(0, 0) {};
+	};
 
-};
+	struct SpriteRenderer {
+		sf::Texture tex;
+		sf::Sprite sprite;
 
-struct Transform : Component {
-	sf::Vector2i position;
-
-	Transform() = default;
-	Transform() : position(0, 0) {}
-
-};
-
-struct SpriteRenderer : Component {
-	sf::Texture tex;
-	sf::Sprite sprite;
-	std::string texPath;
-
-	SpriteRenderer() 
-	{
-		if (!tex.loadFromFile(texPath)) {
-			std::cout << "Error loading file" << std::endl;
-		}
-		else
+		SpriteRenderer(std::string texPath)
 		{
-			sprite.setTexture(tex);
-		}
+			if (!tex.loadFromFile(texPath)) {
+				std::cout << "Error loading file" << std::endl;
+			}
+			else
+			{
+				sprite.setTexture(tex);
+			}
+		};
 	};
 };

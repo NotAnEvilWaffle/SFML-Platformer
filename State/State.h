@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../Entity/Entity.h"
+#include "../Components/Components.h"
 
 namespace Zero {
 
@@ -16,7 +17,7 @@ namespace Zero {
 		virtual void Update(float dt) = 0;
 		virtual void Draw(float dt) = 0;
 
-		virtual Entity CreateEntity();
+		virtual Entity CreateEntity(std::string path);
 
 
 
@@ -33,7 +34,7 @@ namespace Zero {
 
 	private:
 
-
+		friend class Entity;
 
 
 	};
