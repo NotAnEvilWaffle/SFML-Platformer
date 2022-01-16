@@ -1,4 +1,5 @@
 #include "GameState.h"
+#include <tuple>
 
 
 namespace Zero {
@@ -19,6 +20,8 @@ namespace Zero {
 	{
 		sf::Event event;
 
+		
+
 		while (window.lock()->pollEvent(event)) {
 			switch (event.type)
 			{
@@ -27,6 +30,34 @@ namespace Zero {
 					if (event.key.code == sf::Keyboard::T) {
 						std::cout << "T Key pressed from Game State" << std::endl;
 					}
+					if (event.key.code == sf::Keyboard::Right) {
+						auto view = m_Registry.view<Transform>();
+						view.each([&](auto& transform) {
+							transform.position.x += 10;
+
+						});
+					}
+					if (event.key.code == sf::Keyboard::Left) {
+						auto view = m_Registry.view<Transform>();
+						view.each([&](auto& transform) {
+							transform.position.x -= 10;
+
+						});
+					}
+					if (event.key.code == sf::Keyboard::Up) {
+						auto view = m_Registry.view<Transform>();
+						view.each([&](auto& transform) {
+							transform.position.y -= 10;
+
+						});
+					}
+					if (event.key.code == sf::Keyboard::Down) {
+						auto view = m_Registry.view<Transform>();
+						view.each([&](auto& transform) {
+							transform.position.y += 10;
+
+						});
+					}
 					break;
 
 				case sf::Event::Closed:
@@ -34,6 +65,7 @@ namespace Zero {
 					//TODO: This leaks memory and needs to be a bool to for the StateMachine to read to clean up
 					window.lock()->close();
 					break;
+
 
 				default:
 					break;

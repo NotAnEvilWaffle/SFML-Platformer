@@ -8,6 +8,12 @@
 
 namespace Zero {
 
+
+	struct Player {
+		Player() {};
+	};
+
+
 	struct Transform {
 		sf::Vector2i position;
 

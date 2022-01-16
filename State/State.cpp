@@ -9,6 +9,7 @@ namespace Zero {
 		entity.AddComponent<Transform>();
 		entity.SetPosition(0, 0);
 		entity.AddComponent<SpriteRenderer>(path);
+		entity.AddComponent<Player>();
 		return entity;
 	}
 }
