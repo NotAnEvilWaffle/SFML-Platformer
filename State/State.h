@@ -14,10 +14,11 @@ namespace Zero {
 
 		virtual void Init() = 0;
 		virtual void PollInput() = 0;
-		virtual void Update(float dt) = 0;
 		virtual void Draw(float dt) = 0;
+		virtual void Update(float dt) = 0;
 
-		virtual Entity CreateEntity(std::string path);
+		virtual Entity CreateEmptyEntity(std::string path);
+		virtual Entity CreatePlayer(std::string path, short id);
 
 
 

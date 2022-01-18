@@ -1,4 +1,5 @@
 #include "GameState.h"
+#include "../Systems/SpriteRendererSystem.h"
 #include <tuple>
 
 
@@ -13,7 +14,7 @@ namespace Zero {
 	void GameState::Init()
 	{
 		std::cout << "Initializing Game State" << std::endl;
-		Entity player = CreateEntity("Assets/Sprites/ltg.jpg");
+		Entity player = CreatePlayer("Assets/Sprites/ltg.jpg", 1);
 	}
 
 	void GameState::PollInput()
@@ -82,14 +83,8 @@ namespace Zero {
 	void GameState::Draw(float dt)
 	{
 		window.lock()->clear(sf::Color::Black);
-
-		auto view = m_Registry.view<SpriteRenderer, Transform>();
-		view.each([&](auto& sprite, auto& transform) {
-
-			sprite.sprite.setPosition(sf::Vector2f(transform.position));
-			window.lock()->draw(sprite.sprite);
-
-		});
+		SpriteRender(m_Registry, window);
+		
 
 
 		window.lock()->display();

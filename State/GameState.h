@@ -12,7 +12,7 @@ namespace Zero {
 
 		void Init();
 		void PollInput();
-		void Update(float dt);
 		void Draw(float dt);
+		void Update(float dt);
 	};
 }

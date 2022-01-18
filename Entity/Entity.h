@@ -33,6 +33,10 @@ namespace Zero {
 
 	private:
 
+
+
+	protected:
+
 		entt::entity m_Entity;
 		entt::registry* m_StateRegistry;
 		State* m_State;

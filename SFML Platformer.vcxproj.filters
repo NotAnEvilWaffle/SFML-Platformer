@@ -22,6 +22,9 @@
     <Filter Include="Entity">
       <UniqueIdentifier>{ddbff257-921b-4f8f-b057-bd0fe0490204}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{b89373ab-799c-45d4-ab8d-94b7cd04dab2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Entity\Entity.cpp">
       <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\SpriteRendererSystem.cpp">
+      <Filter>Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Entity\Entity.h">
       <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\SpriteRendererSystem.h">
+      <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

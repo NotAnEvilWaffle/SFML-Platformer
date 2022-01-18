@@ -10,7 +10,8 @@ namespace Zero {
 
 
 	struct Player {
-		Player() {};
+		int playerID;
+		Player(int id) : playerID(id) {};
 	};
 
 

@@ -155,6 +155,7 @@
     <ClCompile Include="State\GameState.cpp" />
     <ClCompile Include="State\State.cpp" />
     <ClCompile Include="State\StateMachine.cpp" />
+    <ClCompile Include="Systems\SpriteRendererSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Components.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="State\GameState.h" />
     <ClInclude Include="State\State.h" />
     <ClInclude Include="State\StateMachine.h" />
+    <ClInclude Include="Systems\SpriteRendererSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
