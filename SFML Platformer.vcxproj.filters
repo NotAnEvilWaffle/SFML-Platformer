@@ -48,6 +48,9 @@
     <ClCompile Include="Systems\SpriteRendererSystem.cpp">
       <Filter>Systems</Filter>
     </ClCompile>
+    <ClCompile Include="Systems\PlayerInputSystem.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Components.h">
@@ -72,6 +75,9 @@
       <Filter>Entity</Filter>
     </ClInclude>
     <ClInclude Include="Systems\SpriteRendererSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\PlayerInputSystem.h">
       <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>

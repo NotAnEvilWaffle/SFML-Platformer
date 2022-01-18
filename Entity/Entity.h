@@ -31,17 +31,20 @@ namespace Zero {
 		void SetPosition(int x, int y);
 		void SetPosition(sf::Vector2i position);
 
+		void Move(sf::Vector2i position);
+
 	private:
-
-
-
-	protected:
 
 		entt::entity m_Entity;
 		entt::registry* m_StateRegistry;
 		State* m_State;
 
+
+	protected:
+
+
 		friend class State;
+		friend class GameState;
 
 	};
 }

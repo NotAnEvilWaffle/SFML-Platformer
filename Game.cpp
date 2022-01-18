@@ -5,6 +5,7 @@ namespace Zero {
 	Game::Game(int width, int height, std::string windowTitle) : machine(StateMachine())
 	{
 		m_Window = std::make_shared<sf::RenderWindow>(sf::VideoMode(width, height), windowTitle, sf::Style::Close);
+		m_Window->setFramerateLimit(165);
 
 
 		/*This should be destroyed the moment the game goes out of scope

@@ -17,6 +17,10 @@ namespace Zero {
 		m_StateRegistry->get<Transform>(this->m_Entity).position = position;
 	}
 
+	void Entity::Move(sf::Vector2i position) {
+		m_StateRegistry->get<Transform>(this->m_Entity).position += position;
+	}
+
 	
 
 }

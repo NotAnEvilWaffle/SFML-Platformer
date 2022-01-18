@@ -14,59 +14,23 @@ namespace Zero {
 	void GameState::Init()
 	{
 		std::cout << "Initializing Game State" << std::endl;
-		Entity player = CreatePlayer("Assets/Sprites/ltg.jpg", 1);
+		CreatePlayer("Assets/Sprites/ltg.jpg", 1);
 	}
 
 	void GameState::PollInput()
 	{
 		sf::Event event;
+		PlayerInput(m_Player);
 
 		
 
 		while (window.lock()->pollEvent(event)) {
 			switch (event.type)
 			{
-				case sf::Event::KeyPressed:
-
-					if (event.key.code == sf::Keyboard::T) {
-						std::cout << "T Key pressed from Game State" << std::endl;
-					}
-					if (event.key.code == sf::Keyboard::Right) {
-						auto view = m_Registry.view<Transform>();
-						view.each([&](auto& transform) {
-							transform.position.x += 10;
-
-						});
-					}
-					if (event.key.code == sf::Keyboard::Left) {
-						auto view = m_Registry.view<Transform>();
-						view.each([&](auto& transform) {
-							transform.position.x -= 10;
-
-						});
-					}
-					if (event.key.code == sf::Keyboard::Up) {
-						auto view = m_Registry.view<Transform>();
-						view.each([&](auto& transform) {
-							transform.position.y -= 10;
-
-						});
-					}
-					if (event.key.code == sf::Keyboard::Down) {
-						auto view = m_Registry.view<Transform>();
-						view.each([&](auto& transform) {
-							transform.position.y += 10;
-
-						});
-					}
-					break;
-
 				case sf::Event::Closed:
-
 					//TODO: This leaks memory and needs to be a bool to for the StateMachine to read to clean up
 					window.lock()->close();
 					break;
-
 
 				default:
 					break;
@@ -88,5 +52,16 @@ namespace Zero {
 
 
 		window.lock()->display();
+	}
+
+	void GameState::CreatePlayer(std::string path, short id)
+	{
+		m_Player = std::make_unique<Entity>(m_Registry.create());
+		m_Player->m_State = this;
+		m_Player->m_StateRegistry = &m_Registry;
+		m_Player->AddComponent<Transform>();
+		m_Player->SetPosition(0, 0);
+		m_Player->AddComponent<SpriteRenderer>(path);
+		m_Player->AddComponent<Player>(id);
 	}
 }

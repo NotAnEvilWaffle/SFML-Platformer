@@ -18,17 +18,16 @@ namespace Zero {
 		virtual void Update(float dt) = 0;
 
 		virtual Entity CreateEmptyEntity(std::string path);
-		virtual Entity CreatePlayer(std::string path, short id);
 
 
 
 	protected:
 
 		sf::Event event;
-
 		entt::registry m_Registry;
-
 		std::weak_ptr<sf::RenderWindow> window;
+
+		
 
 
 
