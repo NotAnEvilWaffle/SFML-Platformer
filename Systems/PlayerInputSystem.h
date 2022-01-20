@@ -6,6 +6,6 @@
 
 namespace Zero {
 
-	void PlayerInput(std::unique_ptr<Entity> const& player);
+	void PlayerInput(std::unique_ptr<Entity> const& player, const float dt);
 
 }

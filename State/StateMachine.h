@@ -16,7 +16,7 @@ namespace Zero {
 
 		void PushState(std::unique_ptr<State> state);
 		void PopState();
-		void UpdateState();
+		void UpdateState(const float dt);
 		std::unique_ptr<State>& GetCurrentState();
 
 
@@ -26,7 +26,7 @@ namespace Zero {
 
 	private:
 
-		const float dt = 1.0f / 60.0f;
+		
 
 		std::stack<std::unique_ptr<State>> m_StateStack;
 

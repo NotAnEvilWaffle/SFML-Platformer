@@ -16,7 +16,8 @@ namespace Zero {
 
 
 	struct Transform {
-		sf::Vector2i position;
+		sf::Vector2f position;
+		sf::Vector2i coordinates;
 
 		Transform() : position(0, 0) {};
 	};
@@ -35,5 +36,10 @@ namespace Zero {
 				sprite.setTexture(tex);
 			}
 		};
+	};
+
+	struct RigidBody2D {
+		sf::Vector2f velocity;
+		sf::Vector2f acceleration;
 	};
 };

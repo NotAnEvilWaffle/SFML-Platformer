@@ -20,10 +20,7 @@ namespace Zero {
 	void GameState::PollInput()
 	{
 		sf::Event event;
-		PlayerInput(m_Player);
-
-		
-
+	
 		while (window.lock()->pollEvent(event)) {
 			switch (event.type)
 			{
@@ -40,6 +37,7 @@ namespace Zero {
 
 	void GameState::Update(float dt)
 	{
+		PlayerInput(m_Player, dt);
 		PollInput();
 		Draw(dt);
 	}
@@ -60,6 +58,7 @@ namespace Zero {
 		m_Player->m_State = this;
 		m_Player->m_StateRegistry = &m_Registry;
 		m_Player->AddComponent<Transform>();
+		m_Player->AddComponent<RigidBody2D>();
 		m_Player->SetPosition(0, 0);
 		m_Player->AddComponent<SpriteRenderer>(path);
 		m_Player->AddComponent<Player>(id);

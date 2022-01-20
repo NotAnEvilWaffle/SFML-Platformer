@@ -6,7 +6,7 @@ namespace Zero {
 		m_StateStack.push(std::move(state));
 	}
 
-	void StateMachine::UpdateState() 
+	void StateMachine::UpdateState(const float dt) 
 	{
 		m_StateStack.top()->Update(dt);
 	}

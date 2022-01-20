@@ -26,12 +26,19 @@ namespace Zero {
 		T& RemoveComponent();
 
 		template <typename T>
-		bool HasComponent();
+		bool HasComponent() {
+			return m_StateRegistry->any_of<T>(m_Entity);
+		}
+
+		template <typename T>
+		T& GetComponent() {
+			return m_StateRegistry->get<T>(m_Entity);
+		}
 
 		void SetPosition(int x, int y);
-		void SetPosition(sf::Vector2i position);
+		void SetPosition(sf::Vector2f position);
 
-		void Move(sf::Vector2i position);
+		void UpdateMovement(const float dt);
 
 	private:
 

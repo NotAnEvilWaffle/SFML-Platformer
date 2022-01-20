@@ -7,7 +7,7 @@ namespace Zero {
 		auto view = registry.view<SpriteRenderer, Transform>();
 		view.each([&](auto& sprite, auto& transform) {
 
-			sprite.sprite.setPosition(sf::Vector2f(transform.position));
+			sprite.sprite.setPosition(sf::Vector2f(transform.coordinates));
 			window.lock()->draw(sprite.sprite);
 
 		});
