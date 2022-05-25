@@ -23,9 +23,11 @@ namespace Zero {
 
 	protected:
 
+		State(sf::RenderWindow& parentWindow) : window(parentWindow) {}
+
 		sf::Event event;
 		entt::registry m_Registry;
-		std::weak_ptr<sf::RenderWindow> window;
+		sf::RenderWindow& window;
 
 		
 

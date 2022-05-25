@@ -22,6 +22,10 @@ namespace Zero {
 		Transform() : position(0, 0) {};
 	};
 
+	struct Collider {
+		
+	};
+
 	struct SpriteRenderer {
 		sf::Texture tex;
 		sf::Sprite sprite;

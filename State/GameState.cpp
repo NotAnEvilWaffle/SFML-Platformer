@@ -1,32 +1,32 @@
 #include "GameState.h"
 #include "../Systems/SpriteRendererSystem.h"
-#include <tuple>
 
 
 namespace Zero {
-	GameState::GameState(std::shared_ptr<sf::RenderWindow> parentWindow)
+	GameState::GameState(sf::RenderWindow& parentWindow) : State(parentWindow)
 	{
-		window = parentWindow;
-
 		Init();
 	}
 
 	void GameState::Init()
 	{
 		std::cout << "Initializing Game State" << std::endl;
-		CreatePlayer("Assets/Sprites/ltg.jpg", 1);
+		//CreatePlayer("Assets/Sprites/ltg.jpg", 1);
+
+		_level = new Level("TestMap.tmx", window);
+		
 	}
 
 	void GameState::PollInput()
 	{
 		sf::Event event;
 	
-		while (window.lock()->pollEvent(event)) {
+		while (window.pollEvent(event)) {
 			switch (event.type)
 			{
 				case sf::Event::Closed:
 					//TODO: This leaks memory and needs to be a bool to for the StateMachine to read to clean up
-					window.lock()->close();
+					window.close();
 					break;
 
 				default:
@@ -37,19 +37,21 @@ namespace Zero {
 
 	void GameState::Update(float dt)
 	{
-		PlayerInput(m_Player, dt);
+		//PlayerInput(m_Player, dt);
+		//_level.Update(dt);
 		PollInput();
 		Draw(dt);
 	}
 
 	void GameState::Draw(float dt)
 	{
-		window.lock()->clear(sf::Color::Black);
+		window.clear(sf::Color::Black);
+		_level->Draw(dt); 
 		SpriteRender(m_Registry, window);
 		
 
 
-		window.lock()->display();
+		window.display();
 	}
 
 	void GameState::CreatePlayer(std::string path, short id)

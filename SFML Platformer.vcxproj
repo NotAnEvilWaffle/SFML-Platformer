@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -150,24 +150,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity\Entity.cpp" />
+    <ClCompile Include="External\PugiXML\pugixml.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Level\Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="State\GameState.cpp" />
     <ClCompile Include="State\State.cpp" />
     <ClCompile Include="State\StateMachine.cpp" />
     <ClCompile Include="Systems\PlayerInputSystem.cpp" />
     <ClCompile Include="Systems\SpriteRendererSystem.cpp" />
+    <ClCompile Include="Tile\Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Components.h" />
     <ClInclude Include="Entity\Entity.h" />
     <ClInclude Include="entt.h" />
+    <ClInclude Include="External\PugiXML\pugiconfig.hpp" />
+    <ClInclude Include="External\PugiXML\pugixml.hpp" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Level\Level.h" />
     <ClInclude Include="State\GameState.h" />
     <ClInclude Include="State\State.h" />
     <ClInclude Include="State\StateMachine.h" />
     <ClInclude Include="Systems\PlayerInputSystem.h" />
     <ClInclude Include="Systems\SpriteRendererSystem.h" />
+    <ClInclude Include="Tile\Tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

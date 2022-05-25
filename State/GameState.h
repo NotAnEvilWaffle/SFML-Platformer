@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "../Systems/PlayerInputSystem.h"
+#include "../Level/Level.h"
 #include <iostream>
 
 
@@ -9,7 +10,7 @@ namespace Zero {
 	{
 	public:
 
-		GameState(std::shared_ptr<sf::RenderWindow> parentWindow);
+		GameState(sf::RenderWindow& parentWindow);
 
 		void CreatePlayer(std::string path, short id);
 
@@ -22,6 +23,7 @@ namespace Zero {
 	private:
 
 
+		Level* _level;
 		std::unique_ptr<Entity> m_Player;
 	};
 
